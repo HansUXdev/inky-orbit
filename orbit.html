@@ -1,0 +1,42 @@
+{{!-- 
+      Add this file into your partials.
+      NOTICE the loops and the {{site}} variables. These must be added to your data folder
+      @param orbit-fallback
+      @param orbit
+      @param orbit-thumbs
+--}}
+
+<table class="inky-orbit" cellpadding=0 cellspacing=0 border=0 width="450">
+   <tr>
+      <td>
+         <!--[if !mso]><!-- -->
+         <input type=radio class="cboxcheck" summary="cboxcheck" style="display:none !important;" checked>
+         <div>
+            <div class="thumb-carousel " summary="thumb-carousel">
+               <label>
+                  <input type="radio" name="car-rd1" class="cbox3" summary="cbox3">
+                  <span>
+                     <label>
+                        <input type="radio" name="car-rd1" class="cbox2" summary="cbox2">
+                     <span>
+                        <label>
+                           <input type="radio" name="car-rd1" class="cbox1" summary="cbox1" style="display:none !important;" checked >
+                        <span>
+                           {{#each orbit}}
+                           <div class="content-{{slide}} slide-content" summary="content-{{slide}}"><a href="{{url}}"><img src="{{img}}" alt="{{title}}" alt="" style="display:block;max-height:0" border=0></a></div>
+                           {{/each}}
+
+               {{#each orbit-thumbs}}
+                     <span class="thumb" summary="thumb"><img src="{{img}}"></span>
+                  </span>
+               </label>
+               {{/each}}
+         </div>
+         <!--<![endif]-->
+            <div class="fallback " summary="fallback">
+               <div class="slide-content" summary="slide-content"><a href="{{site}}"><img src="{{orbit-fallback}}" alt="."style="display:block;" border=0></a></div>
+            </div>
+         </div>
+      </td>
+   </tr>
+</table>
