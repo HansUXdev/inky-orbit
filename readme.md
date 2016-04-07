@@ -15,6 +15,7 @@ To use this template, your computer needs:
 
 ## Installation
 - [Download](https://github.com/zurb/foundation-emails-template)
+- [Download This](https://github.com/HansUXdev/inky-orbit/archive/master.zip)
 - Import into src/data
   - orbit.yaml
 - Import into src/assets/scss
@@ -22,8 +23,14 @@ To use this template, your computer needs:
 - Import into src/
   - _orbit.html
 
+## TODO
+1. Test, Test and more Testing (Litmus Testing, Bower Testing, Zurb Template Testing)
+2. Refactor everything
+3. Register as bower component
+4. MAYBE make a pull request but conisdering how this works with yml, partial etc maybe not
 
 ### CREDIT
+[Zurb](https://zurb.com)
 Justin Khoo
 [@freshinbox](https://twitter.com/freshinbox)
 [git](https://github.com/freshinbox)
