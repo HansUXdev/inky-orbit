@@ -9,17 +9,17 @@
 /// @group orbit
 ////
 
+/// @type Map
 /// Use this to change the classes easiliy
-/// @type Map
-  $orbit-classes: (
-    inky-orbit: orbit,
-    container: orbit-container,
-    slide: orbit-slide,
-    bullets: thumb-carousel,
-  ) !default;
+$orbit-classes: (
+  inky-orbit: orbit,
+  container: orbit-container,
+  slide: orbit-slide,
+  bullets: thumb-carousel,
+) !default;
 
-/// Use a single scss map to keep all variables nice and tidy.
 /// @type Map
+/// Use a single scss map to keep all variables nice and tidy.
 $orbit: (
   default: 580px,
   border: #444444,
@@ -56,10 +56,10 @@ table.orbit tr td div .thumb-carousel{
 .inky-orbit .thumb-carousel[summary="thumb-carousel"]
 {
   width: map-get($orbit, img-width);
-  height:0px;
-  max-height:0px;
-  overflow:hidden;
-  text-align:center;
+  height: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  text-align: center;
 }
 
 * [summary^=thumb-carousel] [summary=thumb] img, .thumb-carousel .thumb img{

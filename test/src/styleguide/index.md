@@ -7,6 +7,22 @@
   ```
 
   ## Integrate with Gulp
+  Use this task to quickly copy the files over.
+  ```
+  gulp.task('copy', function() {
+    gulp.src('bower_components/inky-orbit/dist/scss/_inky_orbit.scss')
+      .pipe(gulp.dest('src/assets/scss/components'));
+    gulp.src('bower_components/inky-orbit/dist/data/orbit.yml'')
+      .pipe(gulp.dest('src/dist/data'));
+    gulp.src('bower_components/inky-orbit/dist/partials/inky-orbit.html')
+      .pipe(gulp.dest('src/dist/partials'));
+  });
+  ```
+
+  ## Modify your sass task
+  Inky-Orbit uses rem values.
+
+  Since foundation doesn't use pleeease... you will need to run npm install --save-dev gulp pleeease and then modify your sass settings.
   ```
     gulp.task('sass:email', function() {
       return gulp.src('src/assets/scss/app.scss')
@@ -36,7 +52,7 @@
   ```
 
   ## Integrate with Octophant
-  ```scss
+  ```
     // Generates a Sass settings file from the current codebase
     gulp.task('settings', function() {
       octophant([

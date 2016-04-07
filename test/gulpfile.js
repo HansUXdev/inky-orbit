@@ -8,6 +8,7 @@ var $             = require('gulp-load-plugins')(),
     requireDir    = require('require-dir'),
     lazypipe      = require('lazypipe'),
     fs            = require('fs'),
+    octophant     = require('octophant'),
     inky          = require('inky'),
     siphon        = require('siphon-media-query'),
     sherpa        = require('style-sherpa'),
@@ -20,6 +21,16 @@ var $             = require('gulp-load-plugins')(),
 // Port to use for the development server.
 var PORT = 8000;
 
+    gulp.task('settings', function() {
+      octophant([
+        'bower_components/foundation-emails/scss/**/*.scss',
+        'src/assets/scss/**/*.scss'
+        ], {
+        title: 'Foundation for Emails Settings',
+        output: '../dist/_settings.scss',
+        sort: ['global', 'grid', 'block-grid', 'type']
+      });
+    });
 
 // Browsers to target when prefixing CSS.
 var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
