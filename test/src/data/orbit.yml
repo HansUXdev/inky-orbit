@@ -1,0 +1,45 @@
+site: http://www.zurb.com/
+fallback: http://foundation.zurb.com/assets/img/foundation-emails/inky-with-emailicons.jpg
+orbit:
+  -
+    title: transactional
+    slide: 3
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/transactional.svg
+    style: display:none !important;
+    checked: 
+  -
+    title: marketing
+    slide: 2
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/marketing.svg
+    style: display:none !important;
+    checked: 
+  -
+    title: drip
+    slide: 1
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/drip.svg
+    style: display:none !important;
+    checked: checked
+slide:
+  -
+    title: transactional
+    url: http://foundation.zurb.com/emails/transactional.html
+    slide: 1
+    img: http://foundation.zurb.com/assets/img/foundation-emails/inky-with-emailicons.jpg
+  -
+    title: marketing
+    url: http://foundation.zurb.com/emails/marketing.html
+    slide: 2
+    img: http://foundation.zurb.com/assets/img/inky-class.png
+  -
+    title: drip
+    url: http://foundation.zurb.com/emails/drip.html
+    slide: 3
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/drip.svg
+thumbnail:
+  -
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/transactional.svg
+  -
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/marketing.svg
+  -
+    img: http://foundation.zurb.com/assets/img/foundation-emails/icons/drip.svg
+

@@ -1,0 +1,155 @@
+// Inky Orbit for Foundation for Emails
+// by Hans McMurdy
+// Licensed under MIT Open Source
+// Original Source
+// Seriously, give mad props to this guy.
+// http://freshinbox.com/resources/tools/carousel/
+
+////
+/// @group orbit
+////
+
+/// Use a single scss map to keep all variables nice and tidy.
+/// @type Map
+$orbit: (
+  default: 580px,
+  border: #444444,
+  border-width: 2px,
+  lineheight: 0,
+  margin: 1% 0.61%,
+  thumb: 50px,
+  width: 17.5%, 
+  img-width: 450px,
+  img-height: 280px,
+  small-width: 100%,
+) !default;
+
+
+
+table.orbit tr td div .thumb-carousel{
+  width: map-get($orbit, img-width);
+  height:0px;
+  max-height:0px;
+  overflow:hidden;
+  text-align:center;
+  .cbox3,
+  .cbox2,
+  .cbox1{
+    display: none !important;
+  }
+}
+
+* .fallback .slide-content img{
+  height: map-get($orbit, img-height);
+  width: map-get($orbit, img-width);
+}
+
+.inky-orbit .thumb-carousel[summary="thumb-carousel"]
+{
+  width: map-get($orbit, img-width);
+  height:0px;
+  max-height:0px;
+  overflow:hidden;
+  text-align:center;
+}
+
+* [summary^=thumb-carousel] [summary=thumb] img, .thumb-carousel .thumb img{
+  width: map-get($orbit, thumb);
+  display:block;
+  max-height:0;
+  border: 0;
+}
+
+input{
+  display: none;
+}
+
+
+@media screen and (max-width:9999px){
+  .cboxcheck:checked + * .thumb-carousel,
+  * [summary=cboxcheck]:checked + * [summary^=thumb-carousel] {
+    height: auto !important;
+    max-height: none !important;
+    line-height: map-get($orbit, lineheight);
+  }
+  .thumb-carousel span,
+  * [summary^=thumb-carousel] span {
+    font-size:0;
+    line-height: map-get($orbit, lineheight);
+  }
+  
+  .cboxcheck:checked + * .thumb-carousel .slide-content, 
+  * [summary=cboxcheck]:checked + * [summary^=thumb-carousel] [summary^=content]{
+    display:none;
+    max-height:0px;
+    overflow:hidden;
+  }
+  .thumb-carousel .cbox1:checked + span .content-1,
+  .thumb-carousel .cbox2:checked + span .content-2,
+  .thumb-carousel .cbox3:checked + span .content-3,
+  .thumb-carousel .cbox4:checked + span .content-4,
+  .thumb-carousel .cbox5:checked + span .content-5,
+  * [summary^=thumb-carousel] [summary=cbox1]:checked + span [summary=content-1], 
+  * [summary^=thumb-carousel] [summary=cbox2]:checked + span [summary=content-2],
+  * [summary^=thumb-carousel] [summary=cbox3]:checked + span [summary=content-3], 
+  * [summary^=thumb-carousel] [summary=cbox4]:checked + span [summary=content-4], 
+  * [summary^=thumb-carousel] [summary=cbox5]:checked + span [summary=content-5] 
+  {
+    display:block !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+  
+
+  .thumb-carousel .thumb,
+  * [summary^=thumb-carousel] [summary=thumb]{
+    cursor:pointer;
+    display:inline-block;
+    width: map-get($orbit, width);
+    margin: map-get($orbit, margin);
+    border: map-get($orbit, border-width) solid #bbbbbb;
+  }
+  .thumb-carousel .thumb:hover,
+  * [summary^=thumb-carousel] [summary=thumb]:hover{
+    border: map-get($orbit, border-width) solid map-get($orbit, border);
+  }
+  .thumb-carousel input:checked + span > span,
+  * [summary^=thumb-carousel] [summary^=cbox]:checked + span > span{
+    border-color: map-get($orbit, border);
+  }  
+  .thumb-carousel .thumb img,
+  * [summary^=thumb-carousel] [summary=thumb] img{
+    width:100%;
+    height: auto;
+  }
+  .thumb-carousel img,
+  * [summary^=thumb-carousel] img{
+    max-height: none !important;
+  }      
+  .cboxcheck:checked + * .fallback{
+    display:none !important;
+    display:none;
+    max-height: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+  * [summary="cboxcheck"]:checked + * [summary="fallback"]
+  {
+    max-height: 0px;
+    height: 0px;
+    overflow: hidden;
+  }  
+}
+
+@media screen and (max-width: map-get($orbit, default) ){
+  .inky-orbit,
+  .inky-orbit .thumb-carousel,
+  .inky-orbit .thumb-carousel .slide-content img,
+  .inky-orbit .fallback .slide-content img
+   {
+    width: map-get($orbit, small-width) !important;
+    height:auto;
+   }
+}    
+
+
