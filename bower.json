@@ -1,24 +1,30 @@
 {
   "name": "inky-orbit",
-  "version": "1.0.0",
+  "version": "0.5.0",
+  "description": "A small carousel plugin for use with Foundation for Email.",
+  "main": [
+    "dist/data/orbit.yml",
+    "dist/scss/_inky_orbit.scss",
+    "dist/partials/inky-orbit.html"
+  ],
   "authors": [
     "HANS <me@hansmcmurdy.com>"
   ],
-  "description": "A small carousel plugin for use with Foundation for Email.",
-  "main": "gulpfile.js",
   "license": "MIT",
+  "keywords": [
+    "foundation",
+    "foundation-email",
+    "email"
+  ],
+  "homepage": "https://github.com/HansUXdev/inky-orbit",
+  "moduleType": [],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
     "tests"
   ],
-  "dependencies": {
-    "foundation-emails": "^2.0.1"
-  },
-  "private": true,
   "devDependencies": {
-    "fs": "^1.0.1"
+    "foundation-emails": "^2.0.1"
   }
 }

@@ -1,15 +1,46 @@
 # Getting Started
 
-  ## Install with bower
+  Inky-Orbit is designed to integrate easily with the default [Foundation-Email-Template](https://github.com/zurb/foundation-emails-template). That being said, there are a few minor tid-bits for automated integration.
 
+  ## Start An Email Template like normal
+    ### Foundation CLI
+      ```bash
+      npm install foundation-cli --global
+      ```
+
+      Use this command to set up a blank Foundation for Emails project:
+
+      ```bash
+      foundation new --framework emails
+      ```
+
+      The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
+
+# Install the Plugins
+
+  ## Insall Manually
+  ```bash
+  git clone https://github.com/hansUXdev/inky-orbit bower_components
   ```
+
+  ## Install with bower (Not Ready yet)
+  ```bash
   bower install inky-orbit
   ```
 
+  ## Update your package.json
+  ```
+  npm install -- save-dev octophant
+  npm install -- save-dev gulp-pleeease
+  ```
+
   ## Integrate with Gulp
+
+
+  Copy and Paste this task in your gulpfile to quickly add all the files you need.
   Use this task to quickly copy the files over.
   ```
-  gulp.task('copy', function() {
+  gulp.task('copy:orbit', function() {
     gulp.src('bower_components/inky-orbit/dist/scss/_inky_orbit.scss')
       .pipe(gulp.dest('src/assets/scss/components'));
     gulp.src('bower_components/inky-orbit/dist/data/orbit.yml'')
@@ -65,6 +96,12 @@
       });
     });
   ```
+
+
+
+
+
+
 
 
 
@@ -152,14 +189,10 @@
   gulp.task('pages', function() {
     return  gulp.src('src/pages/**/*.{html,hbs,handlebars}')
       .pipe(panini({
-        data: [
-          'src/data/', 
-          'bower_components/inky-orbit/dist/**/*.yml'
-        ],
-        partials: [
-          'src/partials', 
-          'bower_components/inky-orbit/dist/**/*.html'
-        ],
+        root: 'src/pages',
+        layouts: 'src/layouts',
+        data: 'src/data/',
+        partials: 'src/partials',
       }))
       .pipe(inky())
       .pipe(gulp.dest('dist'));
