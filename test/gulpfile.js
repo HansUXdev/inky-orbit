@@ -24,7 +24,7 @@ var PORT = 8000;
     gulp.task('settings', function() {
       octophant([
         'bower_components/foundation-emails/scss/**/*.scss',
-        'src/assets/scss/**/*.scss'
+        'src/scss/**/*.scss'
         ], {
         title: 'Foundation for Emails Settings',
         output: '../dist/_settings.scss',
@@ -156,23 +156,6 @@ gulp.task('copy', function() {
     }, cb);
   });
 
-
-// Combine JavaScript into one file
-// In production, the file is minified
-  gulp.task('javascript', function() {
-    var uglify = $.if(isProduction, $.uglify()
-      .on('error', function (e) {
-        console.log(e);
-      }));
-
-    return gulp.src(PATHS.javascript)
-      .pipe($.sourcemaps.init())
-      .pipe($.concat('app.js'))
-      .pipe(uglify)
-      .pipe($.if(!isProduction, $.sourcemaps.write()))
-      .pipe(gulp.dest('dist/assets/js'));
-  });
-
 // Copy images to the "dist" folder
 // In production, the images are compressed
 gulp.task('images', function() {
@@ -188,11 +171,10 @@ gulp.task('images', function() {
 // Compile Sass into CSS
 // In production, the CSS is compressed
   gulp.task('sass:site', function() {
-    return gulp.src('src/assets/scss/site.scss')
+    return gulp.src('src/scss/site.scss')
       .pipe($.sourcemaps.init())
       .pipe($.sass({ includePaths: [
         'bower_components/foundation-sites/scss',
-        'bower_components/font-awesome/scss',
         'bower_components/motion-ui/src/'
       ] })
         .on('error', $.sass.logError)
@@ -221,7 +203,7 @@ gulp.task('images', function() {
   });
 
   gulp.task('sass:email', function() {
-    return gulp.src('src/assets/scss/ink.scss')
+    return gulp.src('src/scss/ink.scss')
       .pipe($.sass({ includePaths: [ 'bower_components/foundation-emails/scss', ]})
         .on('error', $.sass.logError)
       )
@@ -262,13 +244,13 @@ gulp.task('server', ['build'], function() {
 
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['sass', 'pages', 'javascript', 'images', 'copy'], ['styleguide','email'], done);
+  sequence('clean', ['sass', 'pages', 'images', 'copy'], ['styleguide','email'], done);
 });
 
 // Release
 gulp.task('release', function() {
   // rimraf('dist', done);
-  gulp.src('src/assets/scss/components/_inky_orbit.scss')
+  gulp.src('src/scss/components/_inky-orbit.scss')
     .pipe(gulp.dest('../dist/scss'));
   gulp.src('src/data/orbit.yml')
     .pipe(gulp.dest('../dist/data'));
