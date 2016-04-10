@@ -1,7 +1,7 @@
 {
   "name": "inky-orbit",
   "version": "1.0.0",
-  "description": "A small carousel plugin for use with Foundation for Email.",
+  "description": "A small carousel plugin for use with Foundation Emails.",
   "main": [
     ""
   ],
