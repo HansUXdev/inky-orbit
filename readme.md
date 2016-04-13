@@ -26,8 +26,7 @@ To use this template, your computer needs:
 ## TODO
 1. Test, Test and more Testing (Litmus Testing, Bower Testing, Zurb Template Testing)
 2. Refactor everything
-3. Register as bower component
-4. MAYBE make a pull request but conisdering how this works with yml, partial etc maybe not
+3. MAYBE make a pull request but conisdering how this works with yml, partial etc maybe not
 
 ### CREDIT
 [Zurb](https://zurb.com)
